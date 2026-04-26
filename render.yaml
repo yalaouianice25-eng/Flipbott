@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: flipbot
+    env: node
+    buildCommand: npm install && cd client && npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: NODE_ENV
+        value: production
